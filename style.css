@@ -43,7 +43,7 @@ ul {
 .btn {
     display: inline-block;
     background: var(--primary-color);
-    color: white;
+    color: rgb(14, 2, 2);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
