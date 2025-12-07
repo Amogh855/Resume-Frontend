@@ -22,7 +22,7 @@
                 <!-- <li><a href="index.html#about" class="nav-link">About Us</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li> -->
                 <a href="#" class="nav-link btn-recruiter active">Recruiter</a>
-                <a href="dashboard.html" class="nav-link btn-recruiter text-decoration-none">Dashboard</a>
+                <!-- <a href="dashboard.html" class="nav-link btn-recruiter text-decoration-none">Dashboard</a> -->
 
                 
         <a href="#" class="nav-link btn-login text-decoration-none" onclick="openLogin(); return false;">
@@ -75,6 +75,38 @@
                 <a href="dashboard.html" class="btn">Analyze Resumes</a>
             </div>
         </section>
+
+
+
+
+<!-- Upload Section -->
+        <section class="upload-section card">
+            <h2 class="section-subtitle">Upload Resumes</h2>
+            <p class="muted">Upload up to 20 resumes at once for processing</p>
+
+            <div class="upload-area" id="dropZone" tabindex="0" role="button" aria-label="Drop resumes here">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Drag &amp; Drop JD Here</h3>
+                <p class="muted">or</p>
+                <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx" hidden>
+                <button class="btn" onclick="document.getElementById('fileInput').click()">Browse Files</button>
+                <p class="small muted">Supported formats: PDF, DOC, DOCX &nbsp;•&nbsp; Max 20 files, 10MB each</p>
+            </div>
+
+            <div class="file-list" id="fileList" aria-live="polite">
+                <!-- Files will be listed here -->
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-outline" id="clearFiles">Clear All</button>
+                <!-- <button class="btn" id="processFiles">Analyze Resumes</button> -->
+                <a href="dashboard.html" class="btn">Analyze Resumes</a>
+            </div>
+        </section>
+
+
+
+
 
      <!-- Job Role and Skills Section -->
         <section class="job-role-section card">
