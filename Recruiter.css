@@ -1,0 +1,607 @@
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Clear All button style */
+.btn-outline {
+    background: transparent;
+    border: 2px solid #4a6cf7;
+    color: #4a6cf7;
+}
+
+.btn-outline:hover {
+    background: rgba(74, 108, 247, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 108, 247, 0.2);
+}
+
+/* Analyze Resumes button style */
+.action-buttons .btn:not(.btn-outline) {
+    background: linear-gradient(135deg, #4a6cf7 0%, #7b61ff 100%);
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(74, 108, 247, 0.3);
+}
+
+.action-buttons .btn:not(.btn-outline):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(74, 108, 247, 0.4);
+}
+
+/* Add a subtle animation on hover */
+.action-buttons .btn:not(.btn-outline)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.action-buttons .btn:not(.btn-outline):hover::after {
+    transform: translateX(100%);
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f121b;
+    color: #e0e0e0;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navbar */
+:root{
+  --nav-bg: #f0efef;           /* navbar background */
+  --nav-ink: #111111;          /* link color */
+  --accent: #4a6cf7;           /* hover/active accent */
+  --shadow: 0 8px 20px rgba(0,0,0,0.08);
+  --container-max: 1200px;
+  --nav-gap: 28px;
+  --transition: 180ms cubic-bezier(.2,.9,.2,1);
+  --mobile-break: 880px;
+}
+
+/* navbar wrapper */
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  padding: 8px 0.5;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+   background-color: rgba(237, 238, 241, 0.98);
+ 
+}
+
+/* center container but allow full-width on small screens */
+.navbar .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nav-gap);
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;           /* horizontal padding for small screens */
+}
+
+/* logo area */
+.logo{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 0;                 /* let container handle spacing */
+  padding: 6px 14px;         /* comfortable click/tap area */
+  border-radius: 10px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.logo:focus,
+.logo:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(74,108,247,0.06);
+}
+
+/* larger, crisp logo */
+.logo-img{
+  height: 60px;              /* slightly smaller than 60 so it fits well on mobile */
+  width: auto;
+  display: block;
+  transition: transform var(--transition);
+}
+
+/* links list */
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* each link item spacing */
+.nav-links li{
+  margin: 0;
+}
+
+/* link base */
+.nav-links a{
+  color: var(--nav-ink);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 6px;               /* hit target for mouse/keyboard */
+  border-radius: 8px;
+  transition: color var(--transition), background var(--transition);
+}
+
+/* subtle background on hover */
+.nav-links a:hover{
+  background: rgba(74,108,247,0.04);
+  color: var(--accent);
+}
+
+/* animated underline (growing) */
+.nav-links a::after{
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 6px;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #7b61ff);
+  border-radius: 2px;
+  transition: width var(--transition);
+}
+
+/* show underline on hover or when link has .active */
+.nav-links a:hover::after,
+.nav-links a.active::after{
+  width: 76%;
+}
+
+/* special button-like links (login / recruiter) */
+.nav-links .btn{
+  margin-left: 14px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+  color: var(--nav-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.nav-links .btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(74,108,247,0.06);
+}
+
+/* active recruiter button style */
+.nav-links .btn-recruiter.active{
+  background: linear-gradient(90deg, var(--accent), #7b61ff);
+  color: #021025;
+  border: none;
+  box-shadow: 0 8px 30px rgba(123,97,255,0.12);
+}
+
+/* accessibility: visible focus ring for keyboard users */
+.nav-links a:focus,
+.nav-links .btn:focus,
+.logo:focus{
+  outline: 3px solid rgba(74,108,247,0.14);
+  outline-offset: 3px;
+}
+
+/* Mobile: collapse nav links into hamburger */
+.mobile-menu-btn{
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--nav-ink);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* responsive rules */
+@media (max-width: calc(var(--mobile-break))){
+  .navbar .container{
+    padding: 0 12px;
+  }
+
+  /* hide desktop nav and show mobile button */
+  .nav-links{
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 14px;
+    background: var(--nav-bg);
+    border-radius: 12px;
+    padding: 12px;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 14px 40px rgba(2,6,23,0.4);
+    min-width: 220px;
+  }
+
+  .nav-links.show{ /* toggle this class via JS to open/close menu */
+    display: flex;
+  }
+
+  .mobile-menu-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* make links more touch friendly */
+  .nav-links a{ padding: 10px 12px; border-radius: 8px; }
+  .nav-links .btn{ margin-left: 0; width: 100%; justify-content: center; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce){
+  :root{ --transition: 0ms; }
+  *{ transition: none !important; animation-duration: 0s !important; }
+}
+
+
+/* Main Page */
+.page {
+    padding: 2rem;
+    transition: padding 0.3s;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.6s forwards;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #6dd3ff;
+}
+
+/* Card */
+.card {
+    background-color: #1a1f2d;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+}
+
+/* Upload Section */
+.upload-section .upload-area {
+    border: 2px dashed #6dd3ff;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: 0.3s, background-color 0.3s;
+}
+
+.upload-area:hover {
+    background-color: #111522;
+    transform: scale(1.02);
+}
+
+.upload-area i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #6dd3ff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.upload-area:hover i {
+    transform: scale(1.2);
+    color: #4ab8ff;
+}
+
+.upload-area h3 {
+    margin-bottom: 0.3rem;
+}
+
+.upload-area .btn {
+    background-color: #6dd3ff;
+    color: #0b0f1a;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-area .btn:hover {
+    background-color: #4ab8ff;
+    transform: scale(1.05);
+}
+
+/* File List */
+.file-list {
+    margin-top: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.file-list div {
+    padding: 0.5rem;
+    background-color: #0b1220;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.file-list div:hover {
+    background-color: #6dd3ff;
+    color: #0b0f1a;
+    transform: scale(1.02);
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.action-buttons .btn-outline {
+    background-color: transparent;
+    border: 1px solid #6dd3ff;
+    color: #6dd3ff;
+    transition: 0.3s, transform 0.2s;
+}
+
+.action-buttons .btn-outline:hover {
+    background-color: #6dd3ff;
+    color: #0b0f1a;
+    transform: scale(1.05);
+}
+
+.action-buttons .btn {
+    transition: 0.3s, transform 0.2s;
+}
+
+.action-buttons .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Job Role Section */
+.job-role-section .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.job-role-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.custom-select {
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    background-color: #0b1220;
+    color: #e0e0e0;
+    border: 1px solid #6dd3ff;
+    appearance: none;
+    font-size: 1rem;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-select:hover select {
+    border-color: #4ab8ff;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.selected-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.selected-skills .skill-tag {
+    background-color: #6dd3ff;
+    color: #0b0f1a;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    transition: transform 0.2s;
+}
+
+.selected-skills .skill-tag:hover {
+    transform: scale(1.05);
+}
+
+.add-skill-btn {
+    background-color: #0b1220;
+    border: 1px solid #6dd3ff;
+    color: #6dd3ff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s, transform 0.2s;
+}
+
+.add-skill-btn:hover {
+    background-color: #6dd3ff;
+    color: #0b0f1a;
+    transform: scale(1.05);
+}
+
+.skills-dropdown {
+    background-color: #0b1220;
+    border: 1px solid #6dd3ff;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: opacity 0.3s;
+}
+
+.skills-dropdown .search-input {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    border: none;
+    border-bottom: 1px solid #6dd3ff;
+    background-color: #0b1220;
+    color: #e0e0e0;
+    outline: none;
+}
+
+.skills-dropdown .skills-list div {
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.skills-dropdown .skills-list div:hover {
+    background-color: #6dd3ff;
+    color: #0b0f1a;
+    transform: scale(1.02);
+}
+
+/* Results Table */
+.results-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.results-card th, .results-card td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #2a2f3d;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.results-card th {
+    background-color: #111522;
+    color: #6dd3ff;
+}
+
+.results-card tr:hover {
+    background-color: #1a1f2d;
+}
+
+/* Utilities */
+.muted {
+    color: #a0a0a0;
+}
+
+.small {
+    font-size: 0.85rem;
+}
+
+.hint-text {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #0b0f1a;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
