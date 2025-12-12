@@ -43,6 +43,7 @@ signupTab.addEventListener("click", () => {
     signinTab.classList.add("text-gray-400", "border-transparent");
 });
 
+
 // Typing effect
 const texts = ["Resume Analyzer"];
 let index = 0;
@@ -55,3 +56,5 @@ const typedText = document.getElementById('typed-text');
         setTimeout(type, 80);
     }
 })();
+
+        

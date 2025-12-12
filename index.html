@@ -42,12 +42,6 @@
     </li>
 </ul>
 
-
-            <!-- Mobile Menu Button -->
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -213,81 +207,48 @@
 
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+
+<!-- ---------------------------------------------- -->
+ <footer class="footer" role="contentinfo">
   <div class="footer-content">
-    <!-- Column 1: Brand + short about -->
+    <!-- Column 1: Brand + About -->
     <div class="footer-column">
       <a href="#" class="footer-brand" aria-label="Home">
-        <img src="image/graphuralogo.png" alt="Graphura" style="height:90px; margin-bottom:12px;">
+        <img src="image/graphuralogo.png" alt="Graphura">
       </a>
-      <p class="footer-small">Helping you shortlist top talent using AI — fast, fair and focused.</p>
-
-      <div style="margin-top:20px;">
-        <div class="footer-newsletter" aria-label="Subscribe to newsletter">
-          <input type="email" id="footer-email" placeholder="Your email address" aria-label="Email address">
-          <button id="footer-subscribe" aria-label="Subscribe">Subscribe</button>
-        </div>
+      <p class="footer-about">Helping you shortlist top talent using AI — fast, fair and focused.</p>
+      
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Subscribe</button>
       </div>
     </div>
 
-    <!-- Column 2: Quick links -->
+    <!-- Column 2: Quick Links -->
     <div class="footer-column">
-      <h3>Quick links</h3>
+      <h3>Quick Links</h3>
       <ul class="footer-links">
         <li><a href="#home">Home</a></li>
         <li><a href="recruiter.html">Recruiter</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#pricing">Pricing</a></li>
       </ul>
     </div>
-
-    <!-- Column 3: Resources -->
-    <div class="footer-column">
-      <h3>Resources</h3>
-      <ul class="footer-links">
-        <li><a href="#docs">Docs</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#support">Support</a></li>
-        <li><a href="#terms">Terms & Privacy</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 4: Contact + Social -->
-    <div class="footer-column">
-      <h3>Contact</h3>
-      <p class="footer-small">support@graphura.in<br>+91  73780 21327</p>
-
-      <div style="margin-top:12px;">
-        <div class="footer-social" aria-label="Social links">
-          <a href="https://x.com/Graphura" class="social-item" aria-label="Follow on Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/company/graphura-india-private-limited/" class="social-item" aria-label="Follow on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.facebook.com/Graphura.in?rdid=ZGMLwODeFI19N1RU&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19nKAMTopZ%2F#" class="social-item" aria-label="Follow on Facebook"><i class="fab fa-facebook-f"></i></a>
-          <!-- <a href="#" class="social-item" aria-label="Follow on GitHub"><i class="fab fa-github"></i></a> -->
-        </div>
+      
+      <div class="social-links">
+        <a href="https://x.com/Graphura" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/graphura-india-private-limited/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/Graphura.in" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://github.com/yourusername" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </div>
 
   <div class="copyright">
-    <small>&copy; <span id="year"></span> Graphura — All rights reserved.</small>
+    <small>&copy; <span id="year"></span> Graphura. All rights reserved.</small>
   </div>
 </footer>
-
-<script>
-  // Minor JS: set year and simple subscribe feedback
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('footer-subscribe').addEventListener('click', function(){
-    const email = document.getElementById('footer-email').value.trim();
-    if(!email) {
-      alert('Please enter your email to subscribe.');
-      return;
-    }
-    // mock behaviour — replace with real API call
-    this.textContent = 'Subscribed';
-    this.disabled = true;
-    this.style.opacity = 0.9;
-  });
-</script>
+<!-- ---------------------------------------------- -->
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">

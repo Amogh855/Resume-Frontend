@@ -7,14 +7,99 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://unpkg.com/feather-icons"></script>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 <style>
-  .shortlisted { border: 2px solid #16a34a; background: linear-gradient(90deg, rgba(16,185,129,0.06), rgba(16,185,129,0.03)); }
-  .card-ai-summary { font-size: 0.95rem; color: #374151; }
-  .score-pill { min-width:54px; text-align:center; border-radius:9999px; padding:6px 10px; font-weight:600; }
-  .chart-wrap { height: 140px; }
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #818cf8;
+    --accent-hover: #6366f1;
+    --border: #2d3748;
+    --success: #34d399;
+  }
+  
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+  
+  header {
+    background-color: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .shortlisted { 
+    border: 2px solid var(--success);
+    background: linear-gradient(90deg, rgba(52, 211, 153, 0.1), rgba(16, 185, 129, 0.05)); 
+  }
+  
+  .card-ai-summary { 
+    font-size: 0.95rem; 
+    color: var(--text-secondary);
+  }
+  
+  .score-pill { 
+    min-width: 54px; 
+    text-align: center; 
+    border-radius: 9999px; 
+    padding: 6px 10px; 
+    font-weight: 600;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+  }
+  
+  .chart-wrap { 
+    height: 140px; 
+    background: var(--bg-secondary);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  
+  /* Update button styles */
+  #exportBtn, #downloadSelected {
+    background-color: var(--accent);
+    color: white;
+    transition: all 0.2s ease;
+  }
+  
+  #exportBtn:hover, #downloadSelected:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+  }
+  
+  #addCandidates {
+    background-color: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  #addCandidates:hover {
+    background-color: rgba(129, 140, 248, 0.1);
+  }
+  
+  /* Update text colors */
+  .text-indigo-600 {
+    color: var(--accent);
+  }
+  
+  .text-gray-500 {
+    color: var(--text-secondary);
+  }
+  
+  /* Update card styles */
+  .bg-white {
+    background-color: var(--bg-secondary) !important;
+  }
+  
+  .text-gray-800 {
+    color: var(--text-primary) !important;
+  }
+  
+  /* Add smooth transitions */
+  * {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
 </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
@@ -42,7 +127,7 @@
     <div class="flex gap-3 flex-wrap">
       <input id="searchInput" type="text" placeholder="Search name/skill/position..." class="border rounded-lg px-3 py-2 text-sm" />
       <select id="positionFilter" class="border rounded-lg px-3 py-2 text-sm">
-        <option value="">All Domains</option>
+        <option value="">All Positions</option>
       </select>
       <select id="scoreFilter" class="border rounded-lg px-3 py-2 text-sm">
         <option value="">All Scores</option>
@@ -136,10 +221,7 @@
   <div class="card bg-white rounded-xl shadow-md p-5 flex flex-col h-full">
     <div class="flex items-start justify-between">
       <div class="flex items-start gap-3">
-        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-xl">
-  <i data-feather="user"></i>
-</div>
-
+        <img class="w-12 h-12 rounded-full object-cover" />
         <div>
           <h4 class="name text-lg font-semibold"></h4>
           <div class="text-sm text-gray-500 position"></div>
@@ -168,67 +250,4 @@
 </template>
 <script src="dashboard.js"></script>
 </body>
-
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-  <div class="footer-content">
-    <!-- Column 1: Brand + short about -->
-    <div class="footer-column">
-      <a href="#" class="footer-brand" aria-label="Home">
-        <img src="image/graphuralogo.png" alt="Graphura" style="height:90px; margin-bottom:12px;">
-      </a>
-      <p class="footer-small">Helping you shortlist top talent using AI — fast, fair and focused.</p>
-
-      <div style="margin-top:20px;">
-        <div class="footer-newsletter" aria-label="Subscribe to newsletter">
-          <input type="email" id="footer-email" placeholder="Your email address" aria-label="Email address">
-          <button id="footer-subscribe" aria-label="Subscribe">Subscribe</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Column 2: Quick links -->
-    <div class="footer-column">
-      <h3>Quick links</h3>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="recruiter.html">Recruiter</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 3: Resources -->
-    <div class="footer-column">
-      <h3>Resources</h3>
-      <ul class="footer-links">
-        <li><a href="#docs">Docs</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#support">Support</a></li>
-        <li><a href="#terms">Terms & Privacy</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 4: Contact + Social -->
-    <div class="footer-column">
-      <h3>Contact</h3>
-      <p class="footer-small">support@graphura.in<br>+91  73780 21327</p>
-
-      <div style="margin-top:12px;">
-        <div class="footer-social" aria-label="Social links">
-          <a href="https://x.com/Graphura" class="social-item" aria-label="Follow on Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/company/graphura-india-private-limited/" class="social-item" aria-label="Follow on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.facebook.com/Graphura.in?rdid=ZGMLwODeFI19N1RU&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19nKAMTopZ%2F#" class="social-item" aria-label="Follow on Facebook"><i class="fab fa-facebook-f"></i></a>
-          <!-- <a href="#" class="social-item" aria-label="Follow on GitHub"><i class="fab fa-github"></i></a> -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="copyright">
-    <small>&copy; <span id="year"></span> Graphura — All rights reserved.</small>
-  </div>
-</footer>
-
-
 </html>

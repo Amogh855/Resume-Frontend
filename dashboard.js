@@ -56,7 +56,7 @@ let atsChartInstance = null;
 // ===== Functions =====
 function populatePositionFilter() {
   const positions = Array.from(new Set(candidates.map(c=>c.position))).sort();
-  positionFilter.innerHTML = '<option value="">All Domains</option>' + positions.map(p=>`<option value="${p}">${p}</option>`).join('');
+  positionFilter.innerHTML = '<option value="">All Positions</option>' + positions.map(p=>`<option value="${p}">${p}</option>`).join('');
 }
 
 function sortCandidates(list, mode){
@@ -119,7 +119,7 @@ function renderPage(){
     else if(c.score>=80) scorePill.classList.add('bg-blue-100','text-blue-800');
     else if(c.score>=70) scorePill.classList.add('bg-yellow-100','text-yellow-800');
     else scorePill.classList.add('bg-red-100','text-red-800');
-    // card.querySelector('img').src=c.photo||'https://via.placeholder.com/80';
+    card.querySelector('img').src=c.photo||'https://via.placeholder.com/80';
     card.querySelector('.card-ai-summary').textContent=generateAISummary(c);
 
     const checkbox=card.querySelector('.shortlistCheckbox');
