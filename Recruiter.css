@@ -535,3 +535,36 @@ ul {
         display: block;
     }
 }
+
+
+/* ---------- SOCIAL ICONS ---------- */
+.footer-social {
+  display: flex;
+  justify-content: center;   /* Center horizontally */
+  align-items: center;       /* Center vertically */
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.footer-social .social-item {
+  width: 40px;
+  height: 40px;
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;       /* Fix vertical centering */
+  justify-content: center;   /* Fix horizontal centering */
+  transition: 0.3s ease;
+  font-size: 20px;
+}
+
+.footer-social .social-item:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+
+

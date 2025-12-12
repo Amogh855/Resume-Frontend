@@ -6,7 +6,11 @@
     <title>Recruiter Dashboard - AI Resume Shortlisting</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="recruiter.css">
+    
+
+    
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -133,6 +137,7 @@
                         </select>
                         <div class="select-arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></div>
                     </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -199,6 +204,70 @@
     </main>
 
     <script src="recruiter.js"></script>
+
+     <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+  <div class="footer-content">
+    <!-- Column 1: Brand + short about -->
+    <div class="footer-column">
+      <a href="#" class="footer-brand" aria-label="Home">
+        <img src="image/graphuralogo.png" alt="Graphura" style="height:90px; margin-bottom:12px;">
+      </a>
+      <p class="footer-small">Helping you shortlist top talent using AI — fast, fair and focused.</p>
+
+      <div style="margin-top:20px;">
+        <div class="footer-newsletter" aria-label="Subscribe to newsletter">
+          <input type="email" id="footer-email" placeholder="Your email address" aria-label="Email address">
+          <button id="footer-subscribe" aria-label="Subscribe">Subscribe</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick links -->
+    <div class="footer-column">
+      <h3>Quick links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recruiter.html">Recruiter</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Resources -->
+    <div class="footer-column">
+      <h3>Resources</h3>
+      <ul class="footer-links">
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#terms">Terms & Privacy</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact + Social -->
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p class="footer-small">support@graphura.in<br>+91  73780 21327</p>
+
+      <div style="margin-top:12px;">
+        <div class="footer-social" aria-label="Social links">
+          <a href="https://x.com/Graphura" class="social-item" aria-label="Follow on Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/graphura-india-private-limited/" class="social-item" aria-label="Follow on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/Graphura.in?rdid=ZGMLwODeFI19N1RU&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19nKAMTopZ%2F#" class="social-item" aria-label="Follow on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <!-- <a href="#" class="social-item" aria-label="Follow on GitHub"><i class="fab fa-github"></i></a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <small>&copy; <span id="year"></span> Graphura — All rights reserved.</small>
+  </div>
+</footer>
+
+
+
 </body>
 </html>
 
