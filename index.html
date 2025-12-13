@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=gi"en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,6 +42,12 @@
     </li>
 </ul>
 
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -149,74 +155,78 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-  <div class="container">
-    <div class="section-header">
-      <h2>Contact & Location</h2>
-      <p class="section-subtitle">Find us on the map — and below you'll find phone, email and other contact options.</p>
-    </div>
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Left Side - Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Our Location</h3>
+                            <p>Plot No 35, 2nd Floor,<br>Vishal Nagar, Sector 3,<br>Gurugram, Haryana 122001</p>
+                        </div>
+                    </div>
 
-    <div class="contact-container">
-      <!-- MAP (top) -->
-      <div class="map-container" aria-label="Map showing Graphura location">
-        <iframe
-          title="Graphura location on Google Maps"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.450803648842!2d77.0726!3d28.4726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d192e8a8a1c1f%3A0x9b9b9b9b9b9b9b9b9!2sGraphura%20India%20Private%20Limited!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone Number</h3>
+                            <p>+91 9999 000 999<br>+91 9999 000 888</p>
+                        </div>
+                    </div>
 
-      <!-- CONTACT GRID (below map) -->
-      <div class="contact-info">
-        <div class="contact-grid" role="list">
-          <article class="contact-card" role="listitem">
-            <div class="contact-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
-            <div class="contact-details">
-              <h3>Our Location</h3>
-              <p>Plot No 35, 2nd Floor,<br>Vishal Nagar, Sector 3,<br>Gurugram, Haryana 122001</p>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Address</h3>
+                            <p>info@graphura.com<br>support@graphura.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Have Questions?</h3>
+                            <p>We're here to help and answer any question you might have. We look forward to hearing from you.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Map -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.450803648842!2d77.0726!3d28.4726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d192e8a8a1c1f%3A0x9b9b9b9b9b9b9b9b9!2sGraphura%20India%20Private%20Limited!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
             </div>
-          </article>
-
-          <article class="contact-card" role="listitem">
-            <div class="contact-icon" aria-hidden="true"><i class="fas fa-phone-alt"></i></div>
-            <div class="contact-details">
-              <h3>Phone Number</h3>
-              <p>+91 9999 000 999<br>+91 9999 000 888</p>
-            </div>
-          </article>
-
-          <article class="contact-card" role="listitem">
-            <div class="contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
-            <div class="contact-details">
-              <h3>Email Address</h3>
-              <p>info@graphura.com<br>support@graphura.com</p>
-            </div>
-          </article>
-
-          <article class="contact-card" role="listitem">
-            <div class="contact-icon" aria-hidden="true"><i class="fas fa-question-circle"></i></div>
-            <div class="contact-details">
-              <h3>Have Questions?</h3>
-              <p>We're here to help and answer any question you might have. We look forward to hearing from you.</p>
-            </div>
-          </article>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="footer" role="contentinfo">
   <div class="footer-content">
     <!-- Column 1: Brand + short about -->
     <div class="footer-column">
       <a href="#" class="footer-brand" aria-label="Home">
-        <img src="image/graphuralogo.png" alt="Graphura" style="height:90px; margin-bottom:12px;">
+        <img src="image/graphuralogo.png" alt="Graphura" style="height:44px; margin-bottom:12px;">
       </a>
       <p class="footer-small">Helping you shortlist top talent using AI — fast, fair and focused.</p>
 
-      <div style="margin-top:20px;">
+      <div style="margin-top:16px;">
         <div class="footer-newsletter" aria-label="Subscribe to newsletter">
           <input type="email" id="footer-email" placeholder="Your email address" aria-label="Email address">
           <button id="footer-subscribe" aria-label="Subscribe">Subscribe</button>
@@ -231,7 +241,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="recruiter.html">Recruiter</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#pricing">Pricing</a></li>
       </ul>
     </div>
 
@@ -249,14 +259,14 @@
     <!-- Column 4: Contact + Social -->
     <div class="footer-column">
       <h3>Contact</h3>
-      <p class="footer-small">support@graphura.in<br>+91  73780 21327</p>
+      <p class="footer-small">hello@yourcompany.com<br>+91 98765 43210</p>
 
       <div style="margin-top:12px;">
         <div class="footer-social" aria-label="Social links">
-          <a href="https://x.com/Graphura" class="social-item" aria-label="Follow on Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/company/graphura-india-private-limited/" class="social-item" aria-label="Follow on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.facebook.com/Graphura.in?rdid=ZGMLwODeFI19N1RU&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19nKAMTopZ%2F#" class="social-item" aria-label="Follow on Facebook"><i class="fab fa-facebook-f"></i></a>
-          <!-- <a href="#" class="social-item" aria-label="Follow on GitHub"><i class="fab fa-github"></i></a> -->
+          <a href="#" class="social-item" aria-label="Follow on Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-item" aria-label="Follow on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-item" aria-label="Follow on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-item" aria-label="Follow on GitHub"><i class="fab fa-github"></i></a>
         </div>
       </div>
     </div>
@@ -267,6 +277,21 @@
   </div>
 </footer>
 
+<script>
+  // Minor JS: set year and simple subscribe feedback
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('footer-subscribe').addEventListener('click', function(){
+    const email = document.getElementById('footer-email').value.trim();
+    if(!email) {
+      alert('Please enter your email to subscribe.');
+      return;
+    }
+    // mock behaviour — replace with real API call
+    this.textContent = 'Subscribed';
+    this.disabled = true;
+    this.style.opacity = 0.9;
+  });
+</script>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">

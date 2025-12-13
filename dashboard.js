@@ -2,16 +2,16 @@ feather.replace();
 
 // ===== Sample Data =====
 const rawCandidates = [
-  {id:1,name:"Sarah Johnson",position:"Frontend Developer",experience:5,score:94,skillsMatch:"28/30",status:"shortlisted"},
-  {id:2,name:"Robert Kim",position:"JavaScript Developer",experience:6,score:91,skillsMatch:"29/30",status:"shortlisted"},
-  {id:3,name:"Michael Chen",position:"UI Engineer",experience:4,score:87,skillsMatch:"25/30",status:"consider"},
-  {id:4,name:"Lisa Thompson",position:"UI/UX Developer",experience:4,score:84,skillsMatch:"26/30",status:"consider"},
-  {id:5,name:"David Wilson",position:"React Developer",experience:3,score:76,skillsMatch:"21/30",status:"consider"},
-  {id:6,name:"Emily Rodriguez",position:"Frontend Engineer",experience:2,score:62,skillsMatch:"18/30",status:"rejected"},
-  {id:7,name:"Aisha Patel",position:"Frontend Developer",experience:7,score:96,skillsMatch:"30/30",status:"shortlisted"},
-  {id:8,name:"Carlos Mendes",position:"React Developer",experience:5,score:82,skillsMatch:"24/30",status:"consider"},
-  {id:9,name:"Nina Gupta",position:"UI Engineer",experience:3,score:88,skillsMatch:"26/30",status:"consider"},
-  {id:10,name:"Omar Ali",position:"JavaScript Developer",experience:8,score:98,skillsMatch:"30/30",status:"shortlisted"},
+  {id:1,name:"Sarah Johnson",position:"Frontend Developer",experience:5,score:94,skillsMatch:"28/30",status:"shortlisted",photo:"https://i.pravatar.cc/150?img=32"},
+  {id:2,name:"Robert Kim",position:"JavaScript Developer",experience:6,score:91,skillsMatch:"29/30",status:"shortlisted",photo:"https://i.pravatar.cc/150?img=5"},
+  {id:3,name:"Michael Chen",position:"UI Engineer",experience:4,score:87,skillsMatch:"25/30",status:"consider",photo:"https://i.pravatar.cc/150?img=12"},
+  {id:4,name:"Lisa Thompson",position:"UI/UX Developer",experience:4,score:84,skillsMatch:"26/30",status:"consider",photo:"https://i.pravatar.cc/150?img=15"},
+  {id:5,name:"David Wilson",position:"React Developer",experience:3,score:76,skillsMatch:"21/30",status:"consider",photo:"https://i.pravatar.cc/150?img=20"},
+  {id:6,name:"Emily Rodriguez",position:"Frontend Engineer",experience:2,score:62,skillsMatch:"18/30",status:"rejected",photo:"https://i.pravatar.cc/150?img=7"},
+  {id:7,name:"Aisha Patel",position:"Frontend Developer",experience:7,score:96,skillsMatch:"30/30",status:"shortlisted",photo:"https://i.pravatar.cc/150?img=25"},
+  {id:8,name:"Carlos Mendes",position:"React Developer",experience:5,score:82,skillsMatch:"24/30",status:"consider",photo:"https://i.pravatar.cc/150?img=11"},
+  {id:9,name:"Nina Gupta",position:"UI Engineer",experience:3,score:88,skillsMatch:"26/30",status:"consider",photo:"https://i.pravatar.cc/150?img=18"},
+  {id:10,name:"Omar Ali",position:"JavaScript Developer",experience:8,score:98,skillsMatch:"30/30",status:"shortlisted",photo:"https://i.pravatar.cc/150?img=9"},
 ];
 
 // ===== State =====
@@ -56,7 +56,7 @@ let atsChartInstance = null;
 // ===== Functions =====
 function populatePositionFilter() {
   const positions = Array.from(new Set(candidates.map(c=>c.position))).sort();
-  positionFilter.innerHTML = '<option value="">All Domains</option>' + positions.map(p=>`<option value="${p}">${p}</option>`).join('');
+  positionFilter.innerHTML = '<option value="">All Positions</option>' + positions.map(p=>`<option value="${p}">${p}</option>`).join('');
 }
 
 function sortCandidates(list, mode){
@@ -119,8 +119,8 @@ function renderPage(){
     else if(c.score>=80) scorePill.classList.add('bg-blue-100','text-blue-800');
     else if(c.score>=70) scorePill.classList.add('bg-yellow-100','text-yellow-800');
     else scorePill.classList.add('bg-red-100','text-red-800');
-    // card.querySelector('img').src=c.photo||'https://via.placeholder.com/80';
-     card.querySelector('.card-ai-summary').textContent=generateAISummary(c);
+    card.querySelector('img').src=c.photo||'https://via.placeholder.com/80';
+    card.querySelector('.card-ai-summary').textContent=generateAISummary(c);
 
     const checkbox=card.querySelector('.shortlistCheckbox');
     checkbox.checked=shortlistedSet.has(c.id)||c.status==='shortlisted';

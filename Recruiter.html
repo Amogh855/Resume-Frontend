@@ -6,9 +6,7 @@
     <title>Recruiter Dashboard - AI Resume Shortlisting</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="recruiter.css">   
-    
+    <link rel="stylesheet" href="recruiter.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -24,7 +22,7 @@
                 <!-- <li><a href="index.html#about" class="nav-link">About Us</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li> -->
                 <a href="#" class="nav-link btn-recruiter active">Recruiter</a>
-                <!-- <a href="dashboard.html" class="nav-link btn-recruiter text-decoration-none">Dashboard</a> -->
+                <a href="dashboard.html" class="nav-link btn-recruiter text-decoration-none">Dashboard</a>
 
                 
         <a href="#" class="nav-link btn-login text-decoration-none" onclick="openLogin(); return false;">
@@ -77,38 +75,6 @@
                 <a href="dashboard.html" class="btn">Analyze Resumes</a>
             </div>
         </section>
-
-
-
-
-<!-- Upload Section -->
-        <section class="upload-section card">
-            <h2 class="section-subtitle">Upload </h2>
-            <p class="muted">Upload up to 20 resumes at once for processing</p>
-
-            <div class="upload-area" id="dropZone" tabindex="0" role="button" aria-label="Drop resumes here">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Drag &amp; Drop JD Here</h3>
-                <p class="muted">or</p>
-                <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx" hidden>
-                <button class="btn" onclick="document.getElementById('fileInput').click()">Browse Files</button>
-                <p class="small muted">Supported formats: PDF, DOC, DOCX &nbsp;•&nbsp; Max 20 files, 10MB each</p>
-            </div>
-
-            <div class="file-list" id="fileList" aria-live="polite">
-                <!-- Files will be listed here -->
-            </div>
-
-            <div class="action-buttons">
-                <button class="btn btn-outline" id="clearFiles">Clear All</button>
-                <!-- <button class="btn" id="processFiles">Analyze Resumes</button> -->
-                <a href="dashboard.html" class="btn">Analyze Resumes</a>
-            </div>
-        </section>
-
-
-
-
 
      <!-- Job Role and Skills Section -->
         <section class="job-role-section card">
@@ -201,72 +167,6 @@
     </main>
 
     <script src="recruiter.js"></script>
-
-     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-  <div class="footer-content">
-    <!-- Column 1: Brand + short about -->
-    <div class="footer-column">
-      <a href="#" class="footer-brand" aria-label="Home">
-        <img src="image/graphuralogo.png" alt="Graphura" style="height:90px; margin-bottom:12px;">
-      </a>
-      <p class="footer-small">Helping you shortlist top talent using AI — fast, fair and focused.</p>
-
-      <div style="margin-top:20px;">
-        <div class="footer-newsletter" aria-label="Subscribe to newsletter">
-          <input type="email" id="footer-email" placeholder="Your email address" aria-label="Email address">
-          <button id="footer-subscribe" aria-label="Subscribe">Subscribe</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Column 2: Quick links -->
-    <div class="footer-column">
-      <h3>Quick links</h3>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="recruiter.html">Recruiter</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 3: Resources -->
-    <div class="footer-column">
-      <h3>Resources</h3>
-      <ul class="footer-links">
-        <li><a href="#docs">Docs</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#support">Support</a></li>
-        <li><a href="#terms">Terms & Privacy</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 4: Contact + Social -->
-    <div class="footer-column">
-      <h3>Contact</h3>
-      <p class="footer-small">support@graphura.in<br>+91  73780 21327</p>
-
-      <div style="margin-top:12px;"
-        <div class="footer-social" aria-label="Social links">
-          <a href="https://x.com/Graphura" class="social-item" aria-label="Follow on Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/company/graphura-india-private-limited/" class="social-item" aria-label="Follow on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.facebook.com/Graphura.in?rdid=ZGMLwODeFI19N1RU&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19nKAMTopZ%2F#" class="social-item" aria-label="Follow on Facebook"><i class="fab fa-facebook-f"></i></a>
-          <!-- <a href="#" class="social-item" aria-label="Follow on GitHub"><i class="fab fa-github"></i></a> -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="copyright">
-    <small>&copy; <span id="year"></span> Graphura — All rights reserved.</small>
-  </div>
-</footer>
-
-
-
 </body>
 </html>
-
-
 
